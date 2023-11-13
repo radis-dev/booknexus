@@ -1,0 +1,5 @@
+.campo-requerido:before {
+  content: "* ";
+  color: red;
+  margin-right: 1px;
+}

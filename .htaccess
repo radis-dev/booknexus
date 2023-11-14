@@ -1,0 +1,17 @@
+# Establece el archivo por defecto al que se accede cuando se ingresa a un directorio
+DirectoryIndex index.php
+
+# Activa el motor de reescritura de URLs
+RewriteEngine On
+
+# Verifica si la solicitud no corresponde a un directorio existente
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Verifica si la solicitud no corresponde a un archivo existente
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Realiza la reescritura de la URL para agregar la extensión .php
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Establece la ruta de inclusión de archivos PHP
+php_value include_path "C:\xampp\htdocs\booknexus.radis.local\src"

@@ -95,7 +95,35 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
      127.0.0.1 tudnslocal.com
      ```
 
-4. **Configuración de Variables Globales:**
+4. **Descarga e Instalación de browscap.ini:**
+
+   - Visita la página web oficial de [https://browscap.org/](https://browscap.org/).
+
+   - Descarga la versión más reciente del archivo `full_php_browscap.ini`.
+
+   - Coloca el archivo descargado en la carpeta de configuración de PHP/Extras (por ejemplo, `C:\xampp\php\extras\browscap.ini`).
+
+   ```bash
+   # Puedes usar comandos como wget o curl para descargar el archivo directamente en la terminal.
+   wget https://browscap.org/stream?q=PHP_BrowsCapINI -O C:\xampp\php\extras\browscap.ini
+   ```
+
+5. **Ejecución del Script SQL:**
+
+   - Importa el script SQL proporcionado (`script.sql`) en tu herramienta de gestión de bases de datos (por ejemplo, phpMyAdmin) para crear las tablas necesarias y agregar datos de prueba.
+
+6. **Cambio de Ruta del Directorio en .htaccess:**
+
+   - Abre o crea el archivo `.htaccess` en la raíz de tu proyecto.
+   - Agrega la siguiente línea para cambiar la ruta del directorio del proyecto:
+
+     ```apache
+     php_value include_path "C:\xampp\htdocs\tu_proyecto\ruta\del\directorio"
+     ```
+
+     Asegúrate de modificar `C:\xampp\htdocs\tu_proyecto\ruta\del\directorio` con la ruta correcta hacia tu directorio de proyecto.
+
+7. **Configuración de Variables Globales:**
 
    - Abre el archivo `configuracion/db.php` y ajusta las variables de conexión a la base de datos según tu configuración local.
 
@@ -118,30 +146,13 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
      const BASE_URL = "tudnslocal.com";
      ```
 
-5. **Ejecución del Script SQL:**
-
-   - Importa el script SQL proporcionado (`script.sql`) en tu herramienta de gestión de bases de datos (por ejemplo, phpMyAdmin) para crear las tablas necesarias y agregar datos de prueba.
-
-6. **Descarga e Instalación de browscap.ini:**
-
-   - Visita la página web oficial de [https://browscap.org/](https://browscap.org/).
-
-   - Descarga la versión más reciente del archivo `full_php_browscap.ini`.
-
-   - Coloca el archivo descargado en la carpeta de configuración de PHP/Extras (por ejemplo, `C:\xampp\php\extras\browscap.ini`).
-
-   ```bash
-   # Puedes usar comandos como wget o curl para descargar el archivo directamente en la terminal.
-   wget https://browscap.org/stream?q=PHP_BrowsCapINI -O C:\xampp\php\extras\browscap.ini
-   ```
-
-7. **Reiniciar Apache:**
+8. **Reiniciar Apache:**
 
    - Reinicia el servidor Apache desde el panel de control de XAMPP o usando los comandos apropiados para tu sistema.
 
-8. **Acceso al Usuario de Prueba:**
+9. **Acceso al Usuario de Prueba:**
    - Utiliza el siguiente usuario de prueba para acceder a la aplicación:
-     - Nombre de usuario: `booknexus`
+     - Correo electronico: `booknexus@radis.dev`
      - Contraseña: `Passw0rd`
 
 Ahora deberías poder acceder a tu proyecto a través de [http://tudnslocal.com](http://tudnslocal.com) en tu navegador. Asegúrate de que las variables en los archivos de configuración estén configuradas correctamente y que las tablas y datos de prueba se hayan creado con éxito.
